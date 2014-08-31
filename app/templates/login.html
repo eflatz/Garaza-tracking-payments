@@ -1,22 +1,24 @@
+<div class="container">
 <div id="login" class="row">
-  <div class="large-6 large-offset-3">
     <form ng-submit="login()">
-      <fieldset class="radius">
+      <fieldset>
         <div class="row">
-          <div class="large-6 columns">
-            <input type="text" name="username" placeholder="username" ng-model="credentials.username" required/>
-          </div>
-            <div class="large-6 columns">
-              <input type="password" name="password" placeholder="password" ng-model="credentials.password" required/>
+          <div class="col-sm-6 col-sm-offset-3">
+              <div class="form-group">
+                  <label class="control-label">Korisničko ime:</label>
+                  <input class="form-control" type="text" name="username" placeholder="Korisničko ime" ng-model="credentials.username" required/>
+              </div>
+              <div class="form-group">
+                  <label class="control-label">Lozinka:</label>
+                  <input  class="form-control" type="password" name="password" placeholder="Lozinka" ng-model="credentials.password" required/>
+              </div>
           </div>
         </div>
-
         <div class="row">
-          <div class="large-12 columns">
-            <button id="log-in" type="submit" class="button large expand radius">Log In</button>
+          <div class="col-sm-6 col-sm-offset-3">
+            <button id="log-in" type="submit" class="btn btn-primary">Logiraj me</button>
           </div>
         </div>
       </fieldset>
     </form>
-  </div>
 </div>
