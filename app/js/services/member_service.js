@@ -1,4 +1,4 @@
-angular.module("app").factory("BookService", function($q, $http) {
+angular.module("app").factory("MemberService", function($q, $http) {
 
   var getMembers = function() {
     return $http.get('/members');
