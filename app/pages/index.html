@@ -7,47 +7,43 @@
   </head>
   <body class="app-body">
     <div class="topbar">
-        <div class="container">
-            <div class="row brand">
-                <h1>Garaža</h1>
-            </div>
+        <div class="container-fluid brand">
+            <h1>Garaža</h1>
         </div>
     </div>
     <div class="header" ng-controller="HeaderController" ng-show="isLogged">
-        <div class="container">
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li><a href="/">Naslovnica</a></li>
-                            <li><a href="/members">Članovi</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usluge <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/services">Pregled</a></li>
-                                    <li><a href="/service-new">Nova usluga</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/groups">Grupe</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav pull-right">
-                            <li><a href="#" ng-click="logout()">Odjava</a></li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-        </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Naslovnica</a></li>
+                        <li><a href="/members">Članovi</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usluge <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/services">Pregled</a></li>
+                                <li><a href="/service-new">Nova usluga</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/groups">Grupe</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="#" ng-click="logout()">Odjava</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
     </div>
     <div class="main container">
       <div class="row">
