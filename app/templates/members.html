@@ -1,0 +1,12 @@
+<div class="container" ng-controller="MembersController">
+    <div class="row">
+        <ul ng-repeat="member in members">
+            <li>{{member.ime}} {{member.prezime}}</li>
+        </ul>
+    </div>
+   <div class="row">
+       <div class="col-sm-4 col-lg-offset-4">
+           <button class="btn btn-primary btn-block" ng-click="newMember()">Novi</button>
+       </div>
+   </div>
+</div>

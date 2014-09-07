@@ -12,6 +12,27 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     controller: 'HomeController'
   });
 
+  $routeProvider.when('/members', {
+      templateUrl: 'members.html',
+      controller: 'MembersController'
+  });
+
+  $routeProvider.when('/member-new', {
+        templateUrl: 'member-new.html',
+        controller: 'MemberNewController'
+  });
+
+  $routeProvider.when('/group-new', {
+        templateUrl: 'group-new.html',
+        controller: 'GroupNewController'
+  });
+
+  $routeProvider.when('/service-new', {
+      templateUrl: 'service-new.html',
+      controller: 'ServiceNewController'
+  });
+
+
   $routeProvider.otherwise({ redirectTo: '/login' });
 
 });

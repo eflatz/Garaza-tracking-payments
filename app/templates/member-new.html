@@ -1,0 +1,25 @@
+<div class="container" ng-controller="MemberNewController">
+    <div class="row">
+        <div class="col-sm-4">
+            <form role="form">
+                <div class="form-group">
+                    <label for="ime" class="control-label">Ime</label>
+                    <input id="ime" type="text" class="form-control" ng-model="ime">
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <form role="form">
+                <div class="form-group">
+                    <label for="prezime" class="control-label">Prezime</label>
+                    <input id="prezime" type="text" class="form-control" ng-model="prezime">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-lg-offset-4">
+            <button ng-click="saveMember()" class="btn btn-primary btn-block">Snimi</button>
+        </div>
+    </div>
+</div>

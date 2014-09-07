@@ -1,3 +1,3 @@
 angular.module("app").factory("MemberResource", function($q, $resource) {
-  return $resource('/members');
+  return $resource('http://localhost:3000/members');
 });
