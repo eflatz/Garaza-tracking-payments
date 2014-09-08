@@ -32,6 +32,11 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
       controller: 'ServiceNewController'
   });
 
+  $routeProvider.when('/services', {
+      templateUrl: 'services.html',
+      controller: 'ServicesController'
+  });
+
 
   $routeProvider.otherwise({ redirectTo: '/home' });
 
