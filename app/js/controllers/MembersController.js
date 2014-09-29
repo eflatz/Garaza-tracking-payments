@@ -1,8 +1,18 @@
 angular.module("app").controller('MembersController', function($scope, $resource, $location) {
     $scope.title = "Members";
-    $scope.members = $resource("localhost:3000/members");
+    // mandatory for row edit directive
+    $scope.read = true;
 
-    $scope.newMember = function(){
-        $location.path('/new-member');
+    var services = $resource("http://localhost:3000/members", {}, {'update':{method:'PUT', isArray:false}});
+    $scope.services = services.query();
+
+    // called from row edit directive
+    $scope.resourceUpdate = function(members){
+        members.$update();
+    };
+
+    // called from row edit directive
+    $scope.resourceDelete = function(members){
+        members.$delete({id:member.id});
     };
 });

@@ -28,7 +28,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="/">Naslovnica</a></li>
-                        <li><a href="/members">Članovi</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Članovi <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/members">Pregled</a></li>
+                                <li><a href="/member-new">Novi član</a></li>
+                            </ul>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usluge <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -36,7 +42,20 @@
                                 <li><a href="/service-new">Nova usluga</a></li>
                             </ul>
                         </li>
-                        <li><a href="/groups">Grupe</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Grupe <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/groups">Pregled</a></li>
+                                <li><a href="/group-new">Nova grupa</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Voditelji <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/groups">Pregled</a></li>
+                                <li><a href="/group-new">Novi voditelj</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav pull-right">
                         <li><a href="#" ng-click="logout()">Odjava</a></li>

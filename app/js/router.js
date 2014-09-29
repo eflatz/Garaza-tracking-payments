@@ -22,6 +22,11 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
         controller: 'MemberNewController'
   });
 
+    $routeProvider.when('/groups', {
+        templateUrl: 'groups.html',
+        controller: 'GroupsController'
+    });
+
   $routeProvider.when('/group-new', {
         templateUrl: 'group-new.html',
         controller: 'GroupNewController'

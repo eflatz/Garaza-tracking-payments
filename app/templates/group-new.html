@@ -1,4 +1,5 @@
 <div class="container" ng-controller="GroupNewController">
+    <h2>Nova usluga</h2>
     <div class="row">
         <div class="col-sm-4">
             <form role="form">
@@ -16,26 +17,10 @@
                 </div>
             </form>
         </div>
-        <div class="col-sm-4">
-            <form role="form">
-                <div class="form-group">
-                    <label for="trajanje" class="control-label">Trajanje</label>
-                    <input id="trajanje" type="text" class="form-control" ng-model="trajanje">
-                </div>
-            </form>
-        </div>
-        <div class="col-sm-4">
-            <form role="form">
-                <div class="form-group">
-                    <label for="cijena" class="control-label">Cijena</label>
-                    <input id="cijena" type="text" class="form-control" ng-model="cijena">
-                </div>
-            </form>
-        </div>
     </div>
     <div class="row">
-        <div class="col-sm-4 col-lg-offset-4">
-            <button ng-click="saveGroup()" class="btn btn-primary btn-block">Snimi</button>
+        <div class="col-sm-2 col-lg-offset-5">
+            <button ng-click="saveGroup()" class="btn btn-warning btn-lg btn-block">Snimi</button>
         </div>
     </div>
 </div>

@@ -1,27 +1,18 @@
-angular.module("app").controller('ServicesController', function($scope, $resource, ServicesResource, $location) {
+angular.module("app").controller('ServicesController', function($scope, $resource, $location) {
     $scope.title = "Services";
+    // mandatory for row edit directive
     $scope.read = true;
-    $scope.write = true;
-    $scope.edit = false;
 
-    var services = $resource("http://localhost:3000/services");
+    var services = $resource("http://localhost:3000/services", {}, {'update':{method:'PUT', isArray:false}});
     $scope.services = services.query();
 
-    var selectedServiceId;
-    $scope.serviceUpdate = function(sid){
-        var serviceToUpdate = services.get({id:sid});
-        var sr = ServicesResource.update({});
+    // called from row edit directive
+    $scope.resourceUpdate = function(service){
+         service.$update();
     };
 
-    $scope.serviceEdit = function(){
-       $scope.read = false;
-       $scope.edit = true;
+    // called from row edit directive
+    $scope.resourceDelete = function(service){
+        service.$delete({id:service.id});
     };
-
-    $scope.serviceDelete = function(){
-
-    };
-
-
-
 });

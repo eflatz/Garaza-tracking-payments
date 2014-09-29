@@ -1,0 +1,24 @@
+<div class="container" ng-controller="GroupsController">
+    <div class="row">
+        <table class="table">
+            <thead>
+               <tr>
+                   <th>ID</th>
+                   <th>Naziv</th>
+                   <th>Opis</th>
+               </tr>
+            </thead>
+            <tr row-edit-directive ng-repeat="group in groups">
+                <td class="row-id"><span class="item-label">{{group.id}}</span></td>
+                <td><span class="row-item-label" ng-show="read">{{group.naziv}}</span></td>
+                <td><span class="row-item-label" ng-show="read">{{group.opis}}</span></td>
+                <td><span class="row-item-label" ng-show="read">{{group.cijena}}</span></td>
+                <td class="row-actions">
+                    <button class="btn btn-link" ng-show="read" ng-click="resourceEdit();editRow(group);">Uredi</button>
+                    <button class="btn btn-link" ng-show="edit" ng-click="saveRow(group);">Snimi</button>
+                    <button class="btn btn-link" ng-show="read" ng-click="deleteRow(group);">Obriši</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

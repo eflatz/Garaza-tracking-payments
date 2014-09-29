@@ -1,6 +1,6 @@
 <div class="container" ng-controller="ServicesController">
     <div class="row">
-        <table class="table" ng-repeat="service in services">
+        <table class="table">
             <thead>
                <tr>
                    <th>ID</th>
@@ -10,15 +10,15 @@
                    <th>Akcija</th>
                </tr>
             </thead>
-            <tr row-edit-directive>
+            <tr row-edit-directive ng-repeat="service in services">
                 <td class="row-id"><span class="item-label">{{service.id}}</span></td>
                 <td><span class="row-item-label" ng-show="read">{{service.naziv}}</span></td>
                 <td><span class="row-item-label" ng-show="read">{{service.opis}}</span></td>
                 <td><span class="row-item-label" ng-show="read">{{service.cijena}}</span></td>
-                <td class="actions">
-                    <button class="btn btn-link" ng-show="read" ng-click="serviceEdit();editRow(service);">Uredi</button>
-                    <button class="btn btn-link" ng-show="edit" ng-click="serviceUpdate()">Snimi</button>
-                    <button class="btn btn-link" ng-show="read" ng-click="serviceDelete()">Obriši</button>
+                <td class="row-actions">
+                    <button class="btn btn-link" ng-show="read" ng-click="resourceEdit();editRow(service);">Uredi</button>
+                    <button class="btn btn-link" ng-show="edit" ng-click="saveRow(service);">Snimi</button>
+                    <button class="btn btn-link" ng-show="read" ng-click="deleteRow(service);">Obriši</button>
                 </td>
             </tr>
         </table>
