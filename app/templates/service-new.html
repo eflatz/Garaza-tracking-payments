@@ -1,37 +1,30 @@
 <div class="container" ng-controller="ServiceNewController">
-    <h2>Nova usluga</h2>
+        <h2>Nova usluga</h2>
+    <form role="form">
     <div class="row">
         <div class="col-sm-4">
-            <form role="form">
-                <div class="form-group">
-                    <label for="naziv" class="control-label">Naziv</label>
-                    <input id="naziv" type="text" class="form-control" ng-model="naziv">
-                </div>
-            </form>
+            <div class="form-group">
+                <label for="naziv" class="control-label">Naziv</label>
+                <input id="naziv" type="text" class="form-control" ng-model="naziv">
+            </div>
         </div>
         <div class="col-sm-4">
-            <form role="form">
-                <div class="form-group">
-                    <label for="opis" class="control-label">Opis</label>
-                    <input id="opis" type="text" class="form-control" ng-model="opis">
-                </div>
-            </form>
+             <div class="form-group">
+                 <label for="opis" class="control-label">Opis</label>
+                 <input id="opis" type="text" class="form-control" ng-model="opis">
+             </div>
         </div>
         <div class="col-sm-4">
-            <form role="form">
-                <div class="form-group">
-                    <label for="trajanje" class="control-label">Trajanje</label>
-                    <input id="trajanje" type="text" class="form-control" ng-model="trajanje">
-                </div>
-            </form>
+             <div class="form-group">
+                 <label for="trajanje" class="control-label">Trajanje</label>
+                 <input id="trajanje" type="text" class="form-control" ng-model="trajanje">
+             </div>
         </div>
         <div class="col-sm-4">
-            <form role="form">
-                <div class="form-group">
-                    <label for="cijena" class="control-label">Cijena</label>
-                    <input id="cijena" type="text" class="form-control" ng-model="cijena">
-                </div>
-            </form>
+             <div class="form-group">
+                 <label for="cijena" class="control-label">Cijena</label>
+                 <input id="cijena" type="text" class="form-control" ng-model="cijena">
+             </div>
         </div>
     </div>
     <div class="row">
@@ -39,4 +32,5 @@
             <button ng-click="saveService()" class="btn btn-warning btn-lg btn-block">Snimi</button>
         </div>
     </div>
+    </form>
 </div>

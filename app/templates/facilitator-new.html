@@ -1,0 +1,23 @@
+<div class="container" ng-controller="FacilitatorNewController">
+    <h2>Novi voditelj</h2>
+    <form role="form">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="ime" class="control-label">Ime</label>
+                <input id="ime" type="text" class="form-control" ng-model="ime">
+            </div>
+        </div>
+        <div class="col-sm-4">
+             <div class="form-group">
+                 <label for="prezime" class="control-label">Prezime</label>
+                 <input id="prezime" type="text" class="form-control" ng-model="prezime">
+             </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-2 col-lg-offset-5">
+            <button ng-click="saveFacilitator()" class="btn btn-warning btn-lg btn-block">Snimi</button>
+        </div>
+    </div>
+    </form>
+</div>

@@ -1,20 +1,34 @@
 <div class="container" ng-controller="MemberNewController">
+    <h2>Novi član</h2>
+    <form role="form">
     <div class="row">
         <div class="col-sm-4">
-            <form role="form">
-                <div class="form-group">
-                    <label for="ime" class="control-label">Ime</label>
-                    <input id="ime" type="text" class="form-control" ng-model="ime">
-                </div>
-            </form>
+            <div class="form-group">
+                <label for="ime" class="control-label">Ime</label>
+                <input id="ime" type="text" class="form-control" ng-model="ime">
+            </div>
         </div>
         <div class="col-sm-4">
-            <form role="form">
-                <div class="form-group">
-                    <label for="prezime" class="control-label">Prezime</label>
-                    <input id="prezime" type="text" class="form-control" ng-model="prezime">
-                </div>
-            </form>
+             <div class="form-group">
+                 <label for="prezime" class="control-label">Prezime</label>
+                 <input id="prezime" type="text" class="form-control" ng-model="prezime">
+             </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="mobitel" class="control-label">Mobitel</label>
+                <input id="mobitel" type="text" class="form-control" ng-model="mobitel">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label class="control-label">Grupa</label>
+                <select class="form-control" ng-model="grupa" ng-options="group.opis for group in groups">
+                    <option value="">Odaberite</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -22,4 +36,5 @@
             <button ng-click="saveMember()" class="btn btn-warning btn-lg btn-block">Snimi</button>
         </div>
     </div>
+    </form>
 </div>

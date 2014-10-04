@@ -1,12 +1,27 @@
-<div class="container" ng-controller="MembersController">
+<div class="container" ng-controller="GroupsController">
     <div class="row">
-        <ul ng-repeat="member in members">
-            <li>{{member.ime}} {{member.prezime}}</li>
-        </ul>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Mobitel</th>
+                <th>Grupa id</th>
+            </tr>
+            </thead>
+            <tr row-edit-directive ng-repeat="member in members">
+                <td class="row-id"><span class="item-label">{{member.id}}</span></td>
+                <td><span class="row-item-label" ng-show="read" data-property-name="ime">{{member.ime}}</span></td>
+                <td><span class="row-item-label" ng-show="read" data-property-name="prezime">{{member.prezime}}</span></td>
+                <td><span class="row-item-label" ng-show="read" data-property-name="mobitel">{{member.mobitel}}</span></td>
+                <td><span class="row-item-label" ng-show="read" data-property-name="grupa_id">{{member.grupa_id}}</span></td>
+                <td class="row-actions">
+                    <button class="btn btn-link" ng-show="read" ng-click="resourceEdit();editRow(member);">Uredi</button>
+                    <button class="btn btn-link" ng-show="edit" ng-click="saveRow(member);">Snimi</button>
+                    <button class="btn btn-link" ng-show="read" ng-click="deleteRow(member);">Obriši</button>
+                </td>
+            </tr>
+        </table>
     </div>
-   <div class="row">
-       <div class="col-sm-4 col-lg-offset-4">
-           <button class="btn btn-primary btn-block" ng-click="newMember()">Novi</button>
-       </div>
-   </div>
 </div>

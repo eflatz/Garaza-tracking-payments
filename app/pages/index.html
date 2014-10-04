@@ -6,12 +6,12 @@
     <link rel="stylesheet" type="text/css" href="/css/app.css" media="all" />
   </head>
   <body class="app-body">
-    <div class="topbar">
+    <div class="topbar hidden-print">
         <div class="container-fluid brand">
             <h1>Garaža</h1>
         </div>
     </div>
-    <div class="header" ng-controller="HeaderController" ng-show="isLogged">
+    <div class="header hidden-print" ng-controller="HeaderController" ng-show="isLogged">
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -36,6 +36,13 @@
                             </ul>
                         </li>
                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Voditelji <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/facilitators">Pregled</a></li>
+                                <li><a href="/facilitator-new">Novi voditelj</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usluge <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/services">Pregled</a></li>
@@ -50,10 +57,10 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Voditelji <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Radionice <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/groups">Pregled</a></li>
-                                <li><a href="/group-new">Novi voditelj</a></li>
+                                <li><a href="/events">Pregled</a></li>
+                                <li><a href="/event-new">Nove radionice</a></li>
                             </ul>
                         </li>
                     </ul>

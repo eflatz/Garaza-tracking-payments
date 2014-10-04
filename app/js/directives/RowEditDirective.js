@@ -19,7 +19,11 @@ angular.module("app").directive("rowEditDirective", function(){
                    console.log("properties", objKeys);
                    $(el).find("td").each(function (i, el) {
                        if (!$(this).hasClass('row-actions') && !$(this).hasClass('row-id')) {
-                           obj[objKeys[i]] = $(this).find("input").val();
+                           if(typeof $(this).find('span').data("property-name") !== 'undefined') {
+                               obj[$(this).find('span').data("property-name")] = $(this).find("input").val();
+                           } else {
+                               obj[objKeys[i]] = $(this).find("input").val();
+                           }
                            $(this).find("input").remove();
                        }
                    });
@@ -39,7 +43,7 @@ angular.module("app").directive("rowEditDirective", function(){
                    // calls outside controller function
                    $scope.resourceDelete(obj);
                    $(el).remove();
-               }
+               };
            }
        };
 });

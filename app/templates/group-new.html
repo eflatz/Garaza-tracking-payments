@@ -1,26 +1,34 @@
 <div class="container" ng-controller="GroupNewController">
-    <h2>Nova usluga</h2>
-    <div class="row">
-        <div class="col-sm-4">
-            <form role="form">
+    <h2>Nova grupa</h2>
+    <form role="form">
+        <div class="row">
+            <div class="col-sm-4">
                 <div class="form-group">
                     <label for="naziv" class="control-label">Naziv</label>
                     <input id="naziv" type="text" class="form-control" ng-model="naziv">
                 </div>
-            </form>
-        </div>
-        <div class="col-sm-4">
-            <form role="form">
+            </div>
+            <div class="col-sm-4">
                 <div class="form-group">
                     <label for="opis" class="control-label">Opis</label>
                     <input id="opis" type="text" class="form-control" ng-model="opis">
                 </div>
-            </form>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label">Usluga</label>
+                    <select class="form-control" ng-model="usluga_id">
+                        <option>Odaberite</option>
+                        <option ng-repeat="service in services" value="{{service.id}}">{{service.naziv}}</option>
+                    </select>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-2 col-lg-offset-5">
-            <button ng-click="saveGroup()" class="btn btn-warning btn-lg btn-block">Snimi</button>
-        </div>
+        <div class="row">
+            <div class="col-sm-2 col-lg-offset-5">
+                <button ng-click="saveGroup()" class="btn btn-warning btn-lg btn-block">Snimi</button>
+            </div>
+    </form>
+
     </div>
 </div>

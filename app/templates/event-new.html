@@ -1,0 +1,56 @@
+<div class="container" ng-controller="EventNewController">
+    <h2>Raspored radionica u {{mjesecOdabrani + 1}}. mjesecu, {{godine[godinaOdabrana]}}.</h2>
+    <form role="form">
+        <div class="row hidden-print">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="control-label">Grupa</label>
+                    <select class="form-control" ng-model="grupa" ng-options="group.opis for group in groups">
+                        <option value="">Odaberite</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="control-label">Mjesec</label>
+                    <select class="form-control" ng-model="mjesecOdabrani" ng-options="mjeseci.indexOf(mjesec) as mjesec for mjesec in mjeseci">
+                        <option value="">Odaberite</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="control-label">Godina</label>
+                    <select class="form-control" ng-model="godinaOdabrana" ng-options="godine.indexOf(godina) as godina for godina in godine">
+                        <option value="">Odaberite</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <button class="btn btn-default row-button" ng-click="createEventGroup(grupa)">Kreiraj grupu</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Ime i prezime</th>
+                        <th>Mobitel</th>
+                        <th ng-repeat="termin in termini">{{termin.getDate() + 1}}.{{termin.getMonth() + 1}}.</th>
+                    </tr>
+                    </thead>
+                    <tr ng-repeat="member in members">
+                        <td>{{member.ime}} {{member.prezime}}</td>
+                        <td>{{member.mobitel}}</td>
+                        <td ng-repeat="termin in termini"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+
+    </div>
+</div>

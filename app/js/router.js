@@ -17,19 +17,39 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
       controller: 'MembersController'
   });
 
-  $routeProvider.when('/member-new', {
-        templateUrl: 'member-new.html',
-        controller: 'MemberNewController'
+  $routeProvider.when('/facilitator-new', {
+        templateUrl: 'facilitator-new.html',
+        controller: 'FacilitatorNewController'
   });
 
-    $routeProvider.when('/groups', {
-        templateUrl: 'groups.html',
-        controller: 'GroupsController'
-    });
+  $routeProvider.when('/facilitators', {
+      templateUrl: 'facilitators.html',
+      controller: 'FacilitatorsController'
+  });
+
+  $routeProvider.when('/member-new', {
+      templateUrl: 'member-new.html',
+      controller: 'MemberNewController'
+  });
+
+  $routeProvider.when('/groups', {
+      templateUrl: 'groups.html',
+      controller: 'GroupsController'
+  });
 
   $routeProvider.when('/group-new', {
         templateUrl: 'group-new.html',
         controller: 'GroupNewController'
+  });
+
+  $routeProvider.when('/events', {
+      templateUrl: 'events.html',
+      controller: 'EventsController'
+  });
+
+  $routeProvider.when('/event-new', {
+      templateUrl: 'event-new.html',
+      controller: 'EventNewController'
   });
 
   $routeProvider.when('/service-new', {

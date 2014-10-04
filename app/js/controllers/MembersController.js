@@ -3,8 +3,8 @@ angular.module("app").controller('MembersController', function($scope, $resource
     // mandatory for row edit directive
     $scope.read = true;
 
-    var services = $resource("http://localhost:3000/members", {}, {'update':{method:'PUT', isArray:false}});
-    $scope.services = services.query();
+    var members = $resource("http://localhost:3000/members", {}, {'update':{method:'PUT', isArray:false}});
+    $scope.members = members.query();
 
     // called from row edit directive
     $scope.resourceUpdate = function(members){
