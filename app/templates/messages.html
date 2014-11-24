@@ -1,0 +1,45 @@
+<div class="container" ng-controller="MessagesController">
+   <h2>Poruke</h2>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label class="control-label">Grupa</label>
+                <select class="form-control" ng-model="selectedGroup" ng-options="group.opis for group in groups" ng-change="getMembers(selectedGroup.id, selectedGroup.usluga_id)">
+                    <option value="">Odaberite</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Odaberi</th>
+                    <th>ID</th>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Mobitel</th>
+                </tr>
+                </thead>
+                <tr ng-repeat="member in members">
+                    <td><input type="checkbox" ng-model="member.selected"></td>
+                    <td class="row-id"><span class="item-label">{{member.id}}</span></td>
+                    <td><span class="row-item-label">{{member.ime}}</span></td>
+                    <td><span class="row-item-label">{{member.prezime}}</span></td>
+                    <td><span class="row-item-label">{{member.mobitel}}</span></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <div>
+                <span ng-repeat="ph in messagePh" ng-class="ph.bsClass" data-ph="ph.memberId" ng-click="addToMessageBody(ph.placeholder)">{{ph.name}}</span>
+            </div>
+            <div class="form-group">
+                <label for="messageBody">Tekst poruke</label>
+                <textarea id="messageBody" rows="5" ng-model="messageBody" class="form-control"></textarea>
+            </div>
+            <button class="btn btn-warning btn-block" ng-click="sendMessage()">Pošalji poruku</button>
+        </div>
+    </div>
+</div>
