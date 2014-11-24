@@ -11,13 +11,12 @@ angular.module("app").controller('EventNewController', function($scope, $resourc
     $scope.godine = [2014, 2015, 2016];
 
     $scope.createEventGroup = function(g) {
-
+        eventsArr = [];
         var groupObj = _.filter($scope.groups, function(obj){
             return obj.termin_dan === g.termin_dan;
         });
 
-        $scope.members = Members.query({group_id:groupObj.id});
-
+        $scope.members = Members.query({group_id:$scope.grupa.id});
 
         var month = $scope.mjesecOdabrani;
 

@@ -1,4 +1,19 @@
-<div class="container" ng-controller="GroupsController">
+<div class="container" ng-controller="MembersController">
+    <h1>Članovi</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="filter-members">Filter članova</label>
+                <input class="form-control" id="filter-members" ng-model="memberFilter">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="filter-members">Filter po grupama</label>
+                <input class="form-control" id="filter-members-group" ng-model="memberFilterByGroup">
+            </div>
+        </div>
+    </div>
     <div class="row">
         <table class="table">
             <thead>
@@ -8,15 +23,18 @@
                 <th>Prezime</th>
                 <th>Mobitel</th>
                 <th>Grupa id</th>
+                <th>Popust (HRK)</th>
             </tr>
             </thead>
-            <tr row-edit-directive ng-repeat="member in members">
+            <tr row-edit-directive ng-repeat="member in members | orderBy:predicateMembers | filter: {ime:memberFilter, grupa_id:memberFilterByGroup}">
                 <td class="row-id"><span class="item-label">{{member.id}}</span></td>
                 <td><span class="row-item-label" ng-show="read" data-property-name="ime">{{member.ime}}</span></td>
                 <td><span class="row-item-label" ng-show="read" data-property-name="prezime">{{member.prezime}}</span></td>
                 <td><span class="row-item-label" ng-show="read" data-property-name="mobitel">{{member.mobitel}}</span></td>
-                <td><span class="row-item-label" ng-show="read" data-property-name="grupa_id">{{member.grupa_id}}</span></td>
+                <td><span class="row-item-label" ng-show="read" data-property-name="grupa_id">{{groupDesc(member.grupa_id)}}</span></td>
+                <td><span class="row-item-label" ng-show="read" data-property-name="popust">{{member.popust}}</span></td>
                 <td class="row-actions">
+                    <a href="/members/{{member.id}}" class="btn btn-link">Detalji</a>
                     <button class="btn btn-link" ng-show="read" ng-click="resourceEdit();editRow(member);">Uredi</button>
                     <button class="btn btn-link" ng-show="edit" ng-click="saveRow(member);">Snimi</button>
                     <button class="btn btn-link" ng-show="read" ng-click="deleteRow(member);">Obriši</button>

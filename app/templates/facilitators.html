@@ -1,0 +1,23 @@
+<div class="container" ng-controller="FacilitatorsController">
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+            </tr>
+            </thead>
+            <tr row-edit-directive ng-repeat="facilitator in facilitators">
+                <td class="row-id"><span class="item-label">{{facilitator.id}}</span></td>
+                <td><span class="row-item-label" ng-show="read" data-property-name="ime">{{facilitator.ime}}</span></td>
+                <td><span class="row-item-label" ng-show="read" data-property-name="prezime">{{facilitator.prezime}}</span></td>
+                <td class="row-actions">
+                    <button class="btn btn-link" ng-show="read" ng-click="resourceEdit();editRow(facilitator);">Uredi</button>
+                    <button class="btn btn-link" ng-show="edit" ng-click="saveRow(facilitator);">Snimi</button>
+                    <button class="btn btn-link" ng-show="read" ng-click="deleteRow(facilitator);">Obriši</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

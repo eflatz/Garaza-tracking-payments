@@ -10,8 +10,10 @@ module.exports = function(lineman) {
   return {
     js: {
       vendor: [
-       "vendor/js/jquery.js",
+        "vendor/js/uderscore.js",
+        "vendor/js/jquery.js",
         "vendor/js/angular.js",
+        "vendor/js/angular-route.js",
         "vendor/js/**/*.js"
       ],
       app: [
@@ -24,7 +26,7 @@ module.exports = function(lineman) {
       compile: {
         options: {
           paths: [
-              "app/css/**/*.less",
+              //"app/css/**/*.less",
               "vendor/css/**/*.css"
           ]
         }

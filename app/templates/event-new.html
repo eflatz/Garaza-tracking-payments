@@ -1,11 +1,12 @@
 <div class="container" ng-controller="EventNewController">
-    <h2>Raspored radionica u {{mjesecOdabrani + 1}}. mjesecu, {{godine[godinaOdabrana]}}.</h2>
+    <h2>Grupa {{grupa.opis}}</h2>
+    <p class="lead">Raspored radionica u {{mjesecOdabrani + 1}}. mjesecu, {{godine[godinaOdabrana]}}.</p>
     <form role="form">
         <div class="row hidden-print">
             <div class="col-sm-3">
                 <div class="form-group">
                     <label class="control-label">Grupa</label>
-                    <select class="form-control" ng-model="grupa" ng-options="group.opis for group in groups">
+                    <select class="form-control" ng-model="grupa" ng-options="group.opis for group in groups track by group.id" ng-change="createEventGroup(grupa)">
                         <option value="">Odaberite</option>
                     </select>
                 </div>
@@ -39,7 +40,7 @@
                     <tr>
                         <th>Ime i prezime</th>
                         <th>Mobitel</th>
-                        <th ng-repeat="termin in termini">{{termin.getDate() + 1}}.{{termin.getMonth() + 1}}.</th>
+                        <th ng-repeat="termin in termini">{{termin.getDate()}}.{{termin.getMonth() + 1}}.</th>
                     </tr>
                     </thead>
                     <tr ng-repeat="member in members">

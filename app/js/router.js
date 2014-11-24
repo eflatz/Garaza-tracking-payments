@@ -17,6 +17,11 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
       controller: 'MembersController'
   });
 
+  $routeProvider.when('/members/:memberId', {
+      templateUrl: 'member-details.html',
+      controller: 'MemberDetailController'
+  });
+
   $routeProvider.when('/facilitator-new', {
         templateUrl: 'facilitator-new.html',
         controller: 'FacilitatorNewController'
@@ -61,6 +66,13 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
       templateUrl: 'services.html',
       controller: 'ServicesController'
   });
+
+  $routeProvider.when('/messages', {
+      templateUrl:'messages.html',
+      controller: 'MessagesController'
+  });
+
+
 
 
   $routeProvider.otherwise({ redirectTo: '/home' });

@@ -1,28 +1,19 @@
-<div class="container" ng-controller="GroupsController">
+<div class="container" ng-controller="EventsController">
     <div class="row">
         <table class="table">
             <thead>
                <tr>
                    <th>ID</th>
-                   <th>Naziv</th>
                    <th>Opis</th>
-                   <th>Usluga id</th>
                    <th>Termin - dan</th>
                    <th>Termin - sat</th>
                </tr>
             </thead>
-            <tr row-edit-directive ng-repeat="group in groups">
-                <td class="row-id"><span class="item-label">{{group.id}}</span></td>
-                <td><span class="row-item-label" ng-show="read">{{group.naziv}}</span></td>
-                <td><span class="row-item-label" ng-show="read">{{group.opis}}</span></td>
-                <td><span class="row-item-label" ng-show="read">{{group.usluga_id}}</span></td>
-                <td><span class="row-item-label" ng-show="read">{{group.termin_dan}}</span></td>
-                <td><span class="row-item-label" ng-show="read">{{group.termin_sat}}</span></td>
-                <td class="row-actions">
-                    <button class="btn btn-link" ng-show="read" ng-click="resourceEdit();editRow(group);">Uredi</button>
-                    <button class="btn btn-link" ng-show="edit" ng-click="saveRow(group);">Snimi</button>
-                    <button class="btn btn-link" ng-show="read" ng-click="deleteRow(group);">Obriši</button>
-                </td>
+            <tr row-edit-directive ng-repeat="event in events">
+                <td class="row-id"><span class="item-label">{{event.id}}</span></td>
+                <td><span class="row-item-label" ng-show="read">getGroupDesc({{event.grupa_id}})</span></td>
+                <td><span class="row-item-label" ng-show="read">getGroupDay({{group.termin_dan}})</span></td>
+                <td><span class="row-item-label" ng-show="read">getGroupHour({{group.termin_sat}})</span></td>
             </tr>
         </table>
     </div>

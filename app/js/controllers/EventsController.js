@@ -1,19 +1,10 @@
-angular.module("app").controller('GroupsController', function($scope, $resource, $location) {
-    $scope.title = "Groups";
+angular.module("app").controller('EventsController', function($scope, $resource, $location) {
+    $scope.title = "Events";
     // mandatory for row edit directive
     $scope.read = true;
 
-    var groups = $resource("http://localhost:3000/groups", {}, {'update':{method:'PUT', isArray:false}});
+    var events = $resource("http://localhost:3000/events", {}, {'update':{method:'PUT', isArray:false}});
+    var groups = $resource("http://localhost:3000/groups");
+
     $scope.groups = groups.query();
-    console.log("grupe", $scope.groups);
-
-    // called from row edit directive
-    $scope.resourceUpdate = function(group){
-         group.$update();
-    };
-
-    // called from row edit directive
-    $scope.resourceDelete = function(group){
-        group.$delete({id:group.id});
-    };
 });
